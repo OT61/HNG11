@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HNG11 - STAGE 1</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #000000;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1, h2, p {
+      text-align: center;
+      margin-top: 50px;
+      color: #fff;
+      text-transform: capitalize;
+      font-size: 24px;
+    }
+
+    .email {
+      text-transform: none;
+    }
+
+    .displayPic {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .displayPic img {
+      /*width: 60px;
+      height: 60px;*/
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .links a:hover {
+      color: #ff0000;
+    }
+
+    .goals {
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .goals h2 {
+      margin-top: 0;
+      color: #000;
+    }
+
+/*  MEDIA QUERIES  */
+
+    @media (max-width: 767px) {
+      .displayPic {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .displayPic img {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1199px) {
+      .displayPic img {
+        max-width: 50%;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .displayPic img {
+        max-width: 30%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>My Tech Goals for the Next 2 Years</h1>
+
+    <div class="displayPic">
+      <img src="slackdp.jpeg" alt="Slack Profile Picture" data-testid="slackProfilePicture">
+      <div>
+        <h2 data-testid="slackDisplayName">Toluwani</h2>
+        <p class="email" data-testid="slackEmail">omokoredeogundare@gmail.com</p>
+      </div>
+    </div>
+
+    <div class="links">
+      <a href="https://hng.tech/learn" data-testid="hngLink">HNG Learn</a>
+      <a href="https://keyword.dog" data-testid="keywordLink">Keyword.dog</a>
+      <a href="https://scrapeanyweb.site" data-testid="scrapeanywebLink">Scrapeanyweb</a>
+    </div>
+
+    <div class="goals">
+      <h2>My Tech Goals for the Next 2 Years!</h2>
+      <ul>
+        <li>Become proficient in cybersecurity practices, including penetration testing ad network security</li>
+        <br>
+        <li>Contribute to open-source projects related to cybersecurity and web development to gain pratical experience and become visible in the tech community</li>
+        <br>
+        <li>Improve my problem-solving and critical thinking abilities through daily coding challenges</li>
+        <br>
+        <li>Explore the intersection of finance and technology, potentially exploring meaningful opportunities in the fintech or financial analysis using programming skills like python</li>
+        <br>
+        <li>Attend relevant cybersecurity and web development conferences and meetups to network, learn from industry experts, and stay up-to-date with the latest trend</li>
+        <br>
+        <li>Develop a strong foundation in full-stack web development, leveraging technologies like the MERN stack</li>
+      </ul>
+    </div>
+
+    <p>Current Time in UTC: <span data-testid="currentTimeUTC"></span></p>
+    <p>Current Day of the Week: <span data-testid="currentDay"></span></p>
+  </div>
+
+<!-- CUSTOM JAVASCRIPT -->
+
+  <script>
+    function updateTime() {
+      const currentTimeUTC = new Date().toLocaleString("en-US", { timeZone: "UTC" });
+      const currentDay = new Date().toLocaleString("en-US", { weekday: "long" });
+
+      document.querySelector("[data-testid='currentTimeUTC']").textContent = currentTimeUTC;
+      document.querySelector("[data-testid='currentDay']").textContent = currentDay;
+    }
+
+    updateTime();
+    setInterval(updateTime, 1000);
+  </script>
+</body>
+</html>
